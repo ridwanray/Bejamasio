@@ -11,16 +11,16 @@ function Paginate() {
         <img src={arrowLeft} alt="" />
       </span>
       
-       <span class="text-muted" style="margin-right: 10px;margin-left: 10px;">
+       <span class="text-muted" style={{marginRight: '10px;margin-left: 10px'}}>
          1
        </span>
-       <span class="text-muted" style="margin-right: 10px;margin-left: 10px;">
+       <span class="text-muted" style={{marginRight: '10px;margin-left: 10px'}}>
          2
        </span>
-       <span class="" style="margin-right: 10px;margin-left: 10px;">
+       <span class="" style={{marginRight: '10px;margin-left: 10px'}}>
         3
       </span>
-      <span class="text-muted" style="margin-right: 10px;margin-left: 10px;">
+      <span class="text-muted" style={{marginRight: '10px;margin-left: 10px'}}>
         4
       </span>
 
