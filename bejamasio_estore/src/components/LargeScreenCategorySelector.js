@@ -9,42 +9,49 @@ function LargeScreenCategorySelector() {
           <div className="mt-2 mb-3 form-inline">
             <div className="checkbox-example">
               <input type="checkbox" value="1" id="checkboxOneInput" />
+              &nbsp;
               <label for="checkboxOneInput">People</label>
             </div>
           </div>
           <div className="mt-2 mb-3 form-inline">
             <div className="checkbox-example">
               <input type="checkbox" value="1" id="checkboxOneInput" />
+              &nbsp;
               <label for="checkboxOneInput">Premium</label>
             </div>
           </div>
           <div className="mt-2 mb-3 form-inline">
             <div className="checkbox-example">
               <input type="checkbox" value="1" id="checkboxOneInput" />
+              &nbsp;
               <label for="checkboxOneInput">Pets</label>
             </div>
           </div>
           <div className="mt-2 mb-3 form-inline">
             <div className="checkbox-example">
               <input type="checkbox" value="1" id="checkboxOneInput" />
+              &nbsp;
               <label for="checkboxOneInput">Food</label>
             </div>
           </div>
           <div className="mt-2 mb-3 form-inline">
             <div className="checkbox-example">
               <input type="checkbox" value="1" id="checkboxOneInput" />
+              &nbsp;
               <label for="checkboxOneInput">Landmarks</label>
             </div>
           </div>
           <div className="mt-2 mb-3 form-inline">
             <div className="checkbox-example">
               <input type="checkbox" value="1" id="checkboxOneInput" />
+              &nbsp;
               <label for="checkboxOneInput">Cities</label>
             </div>
           </div>
           <div className="mt-2 mb-3 form-inline">
             <div className="checkbox-example">
               <input type="checkbox" value="1" id="checkboxOneInput" />
+              &nbsp;
               <label for="checkboxOneInput">Nature</label>
             </div>
           </div>
@@ -59,24 +66,28 @@ function LargeScreenCategorySelector() {
           <div className="mt-2 mb-3 form-inline">
             <div className="checkbox-example">
               <input type="checkbox" value="1" id="checkboxOneInput" />
+              &nbsp;
               <label for="checkboxOneInput">Lower than $20</label>
             </div>
           </div>
           <div className="mt-2 mb-3 form-inline">
             <div className="checkbox-example">
               <input type="checkbox" value="1" id="checkboxOneInput" />
+              &nbsp;
               <label for="checkboxOneInput">$20 - $100</label>
             </div>
           </div>
           <div className="mt-2 mb-3 form-inline">
             <div className="checkbox-example">
               <input type="checkbox" value="1" id="checkboxOneInput" />
+              &nbsp;
               <label for="checkboxOneInput">$100 - $200</label>
             </div>
           </div>
           <div className="mt-2 mb-3 form-inline">
             <div className="checkbox-example">
               <input type="checkbox" value="1" id="checkboxOneInput" />
+              &nbsp;
               <label for="checkboxOneInput">More than $200</label>
             </div>
           </div>

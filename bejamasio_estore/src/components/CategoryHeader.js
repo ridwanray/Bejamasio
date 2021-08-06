@@ -6,6 +6,7 @@ function CategoryHeader() {
       <section className="container d-flex justify-content-between">
         <div>
           <strong>Photograph /</strong>
+          &nbsp;
           <span className="text-muted">Premium Photos </span>
         </div>
         <div
@@ -13,7 +14,7 @@ function CategoryHeader() {
     	d-xl-none .d-xxl-block"
         >
           <img
-            src={{mobileCategoryIcon}}
+            src={mobileCategoryIcon}
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
             className="img-fluid"

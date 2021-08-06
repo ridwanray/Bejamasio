@@ -1,6 +1,13 @@
 import React from "react";
 import logo from "../images/Group 3.1.png"; 
 function Header() {
+
+  const openCartNav = ()=>
+  {
+    document.getElementById("mySidenav").style.width = "300px";
+    document.getElementById("mySidenav").style.display = "inline";
+  }
+
   return (
     <section className="mt-3 container">
       <div className="container d-flex justify-content-between">
@@ -10,7 +17,7 @@ function Header() {
 
         <div>
           <img
-            onclick="openNav()"
+            onClick={openCartNav}
             className="position-relative mb-3"
             src={logo}
             alt=""
