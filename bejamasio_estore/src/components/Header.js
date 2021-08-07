@@ -17,6 +17,8 @@ function Header() {
 
         <div>
           <img
+       
+          style={{cursor: 'pointer'}}
             onClick={openCartNav}
             className="position-relative mb-3"
             src={logo}

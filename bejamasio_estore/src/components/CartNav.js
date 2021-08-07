@@ -15,11 +15,11 @@ function CartNav() {
         <div class="mt-2">
           <div class="container d-flex justify-content-between">
             <div>
-              <span class="mb-3" style={{fontSize: "15px;"}}>
+              <span class="mb-3" style={{ fontSize: "15px" }}>
                 <strong>Samurai King Resting</strong>{" "}
               </span>
               <br />
-              <span style={{fontSize: "12px"}} class="text-muted pt-0 mt-2">
+              <span style={{ fontSize: "12px" }} class="text-muted pt-0 mt-2">
                 $100, 000. 00
               </span>
             </div>
@@ -29,16 +29,16 @@ function CartNav() {
             </div>
           </div>
           <hr
-            style={{border: "2px solid #e4e4e4"}}
+            style={{ border: "2px solid #e4e4e4" }}
             class="mr-1 ml-1 container font-weight-bold"
           />
           <div class="container d-flex justify-content-between">
             <div>
-              <span class="mb-3" style={{fontSize: "15px"}}>
+              <span class="mb-3" style={{ fontSize: "15px" }}>
                 <strong>Samurai King Resting</strong>{" "}
               </span>
               <br />
-              <span style={{fontSize: "12px"}} class="text-muted pt-0 mt-2">
+              <span style={{ fontSize: "12px" }} class="text-muted pt-0 mt-2">
                 $100, 000. 00
               </span>
             </div>
@@ -49,9 +49,31 @@ function CartNav() {
           </div>
 
           <hr
-            style={{border: "2px solid #e4e4e4"}}
+            style={{ border: "2px solid #e4e4e4" }}
             class="mr-1 ml-1 container font-weight-bold"
           />
+
+          <div class="container d-flex justify-content-between">
+            <div>
+              <span class="mb-3" style={{ fontSize: "15px" }}>
+                <strong>Samurai King Resting</strong>{" "}
+              </span>
+              <br />
+              <span style={{ fontSize: "12px" }} class="text-muted pt-0 mt-2">
+                $100, 000. 00
+              </span>
+            </div>
+
+            <div>
+              <img src={imageProd} height="40" width="auto" alt="" />
+            </div>
+          </div>
+
+          <div class="container text-center d-grid gap-2 fixed-bottom">
+            <button type="button" class="btn btn-outline-dark btn-md ">
+              CLEAR
+            </button>
+          </div>
         </div>
       </div>
     </>
