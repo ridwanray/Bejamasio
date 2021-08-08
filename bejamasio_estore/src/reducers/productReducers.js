@@ -4,20 +4,20 @@ import {
     GetAllProducts_FAIL,
   } from "../constants/productConstants";
   
-  export const getAllProductsReducer = (state = {}, action) => {
+  export const getAllProductsReducer = (state = { products: [] }, action) => {
     switch (action.type) {
       case GetAllProducts_REQUEST:
-        return { loading: true };
+        return {FetchingProductLoading: true, products: []}
   
       case GetAllProducts_SUCCESS:
         return {
-          loading: false,
           products: action.payload,
-          success: true,
-        };
-  
+          FetchingProductLoading: false,
+          ProductFetchedSuccessful: true  
+      };
+
       case GetAllProducts_FAIL:
-        return { loading: false, error: action.payload };
+        return {FetchingProductLoading: false, error: action.payload }
   
       default:
         return state;

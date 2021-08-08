@@ -1,3 +1,4 @@
+import React, {useEffect} from 'react';
 import CartNav from './components/CartNav';
 import CategoryHeader from './components/CategoryHeader';
 import FeaturedProduct from './components/FeaturedProduct';
@@ -7,9 +8,21 @@ import Header from './components/Header';
 import MobileFilterModal from './components/MobileFilterModal';
 import Paginate from './components/Paginate';
 import ProductListsSection from './components/ProductListsSection';
+import { fetchProducts } from "./actions/productActions";
+import { useDispatch, useSelector } from "react-redux";
 
 
 function App() {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+
+    dispatch(fetchProducts());
+    console.log('Hey, Effect coming from App')
+
+  }, []);
+
   return (
         <>     
           <Header/> 
@@ -23,7 +36,6 @@ function App() {
           <MobileFilterModal/>
         </>
      
-    
   );
 }
 

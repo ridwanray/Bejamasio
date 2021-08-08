@@ -1,26 +1,39 @@
-import axios from "axios";
 import {
   GetAllProducts_REQUEST,
   GetAllProducts_SUCCESS,
   GetAllProducts_FAIL,
 } from "../constants/productConstants";
 
-export const get_all_db_products = () => async (dispatch, getState) => {
-  try {
+export const fetchProducts = () => {
+  return (dispatch, getState, { getFirebase }) => {
+    const firestore = getFirebase().firestore();
     dispatch({ type: GetAllProducts_REQUEST });
-
-    const { data } = await axios.get(`/allproducts/`);
-    dispatch({
-      type: GetAllProducts_SUCCESS,
-      payload: data,
-    });
-  } catch (error) {
-    dispatch({
-      type: GetAllProducts_FAIL,
-      payload:
-        error.response && error.response.data.detail
-          ? error.response.data.detail
-          : error.message,
-    });
-  }
+    console.log("fetching contact..........");
+    firestore
+      .collection("products")
+      .get()
+      .then((querySnapshot) => {
+        const ProductData = [];
+        querySnapshot.forEach((doc) => {
+          ProductData.push(
+            (doc.data())
+          );       
+        });
+        console.log(ProductData);
+        console.log('------------')
+        // console.log(ProductData[1]['name'])
+        // const featuredProducts =  ProductData.filter(product => product.featured == true)
+        // console.log(featuredProducts)
+        dispatch({
+          type: GetAllProducts_SUCCESS,
+          // payload:,
+        });
+      })
+      .catch((error) => {
+        dispatch({
+          type: GetAllProducts_FAIL,
+          payload: error.message,
+        });
+      });
+  };
 };
