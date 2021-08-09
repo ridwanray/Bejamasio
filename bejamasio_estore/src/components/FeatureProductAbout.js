@@ -63,15 +63,15 @@ function FeatureProductAbout() {
                     <div className="col-12 d-flex justify-content-between justify-content-lg-evenly justify-content-xl-evenly mt-2 text-lg-end text-xl-end ">
                       {featuredProduct[0].details.recommendations.map(
                         (recommeds) => (
-                          <>
-                          <img
+                          <React.Fragment key={recommeds.src}>
+                          <img 
                             className=""
                             src={recommeds.src}
                             alt=""
                             width="100"
                             height="120"
                           />&nbsp;
-                           </>
+                          </React.Fragment>
                         )
                       )}
                     </div>

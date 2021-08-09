@@ -17,7 +17,7 @@ import {
       };
 
       case GetAllProducts_FAIL:
-        return {FetchingProductLoading: false, error: action.payload }
+        return {FetchingProductLoading: false, error: action.payload , products: []}
   
       default:
         return state;

@@ -1,12 +1,10 @@
 import React from "react";
-import logo from "../images/Group 3.1.png"; 
+import logo from "../images/Group 3.1.png";
 function Header() {
-
-  const openCartNav = ()=>
-  {
+  const openCartNav = () => {
     document.getElementById("mySidenav").style.width = "300px";
     document.getElementById("mySidenav").style.display = "inline";
-  }
+  };
 
   return (
     <section className="mt-3 container">
@@ -17,8 +15,7 @@ function Header() {
 
         <div>
           <img
-       
-          style={{cursor: 'pointer'}}
+            style={{ cursor: "pointer" }}
             onClick={openCartNav}
             className="position-relative mb-3"
             src={logo}
@@ -28,9 +25,9 @@ function Header() {
           />
           <span
             style={{ fontSize: "x-small" }}
-            class="position-absolute bottom-0 start-100 pr-n3 translate-middle badge bg-secondary"
+            className="position-absolute bottom-0 start-100 pr-n3 translate-middle badge bg-secondary"
           >
-            1<span class="visually-hidden">cart items count</span>
+            1<span className="visually-hidden">cart items count</span>
           </span>
         </div>
       </div>

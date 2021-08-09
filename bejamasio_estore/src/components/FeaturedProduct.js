@@ -19,7 +19,7 @@ function FeaturedProduct() {
         <div className="mt-5 container d-flex justify-content-center text-center text-muted h4">
 
           <div>
-            <span className="text-center">Loading data ...</span>
+            <span className="d-flex justify-content-center">Loading data ...</span>
             <div class="spinner-border spinner-border-sm" role="status">
               <span class="visually-hidden">Loading...</span>
             </div>

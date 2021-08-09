@@ -6,7 +6,6 @@ import FeatureProductAbout from './components/FeatureProductAbout';
 import FeatureProductDetails from './components/FeatureProductDetails';
 import Header from './components/Header';
 import MobileFilterModal from './components/MobileFilterModal';
-import Paginate from './components/Paginate';
 import ProductListsSection from './components/ProductListsSection';
 import { fetchProducts } from "./actions/productActions";
 import { useDispatch, useSelector } from "react-redux";
@@ -32,7 +31,6 @@ function App() {
           <FeatureProductDetails/>
           <CategoryHeader/>
           <ProductListsSection/>
-          <Paginate/>
           <MobileFilterModal/>
         </>
      
