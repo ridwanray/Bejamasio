@@ -21,12 +21,11 @@ export const fetchProducts = () => {
         });
         console.log(ProductData);
         console.log('------------')
-        // console.log(ProductData[1]['name'])
-        // const featuredProducts =  ProductData.filter(product => product.featured == true)
-        // console.log(featuredProducts)
+        const featuredProducts =  ProductData.filter(product => product.featured == true)
+        console.log(featuredProducts[0].name)
         dispatch({
           type: GetAllProducts_SUCCESS,
-          // payload:,
+          payload:ProductData
         });
       })
       .catch((error) => {

@@ -10,10 +10,11 @@ import thunk from "redux-thunk";
 import { getFirebase, ReactReduxFirebaseProvider } from "react-redux-firebase";
 import firebase from "./config/firebaseConfig";
 import { createFirestoreInstance } from "redux-firestore";
+import logger from "redux-logger";
 
 const store = createStore(
   rootReducer,
-  applyMiddleware(thunk.withExtraArgument({ getFirebase }))
+  applyMiddleware(thunk.withExtraArgument({ getFirebase }), logger)
 );
 
 const rrfProps = {
