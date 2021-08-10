@@ -9,6 +9,7 @@ function CartNav() {
   
   const closeCartNav = () => {
     document.getElementById("mySidenav").style.display = "none";
+    document.getElementById("counterbadge").style.display = "none";
   };
 
   const CartItemsInfo = useSelector((state) => state.Cart);
@@ -53,7 +54,7 @@ function CartNav() {
                         src={item.image.src}
                         // src={item.image.src || item.image}
                         height="40"
-                        width="120"
+                        width="80"
                         alt=""
                       />
                     </div>
@@ -67,7 +68,7 @@ function CartNav() {
             </div>
 
             {cartItems.length > 0 && (
-              <div class="container text-center d-grid gap-2 fixed-bottom">
+              <div className="container text-center d-grid gap-2 fixed-bottom">
                 <button onClick={()=>{clearCart()}} type="button" class="btn btn-outline-dark btn-md ">
                   CLEAR
                 </button>
@@ -75,7 +76,7 @@ function CartNav() {
             )}
 
             {cartItems.length == 0 && (
-              <div class="container text-center d-grid gap-2 fixed-bottom">
+              <div className="container text-center d-grid gap-2 fixed-bottom">
                 No items in the cart
               </div>
             )}

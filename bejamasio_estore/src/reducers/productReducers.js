@@ -13,7 +13,9 @@ import {
         return {
           products: action.payload,
           FetchingProductLoading: false,
-          ProductFetchedSuccessful: true  
+          ProductFetchedSuccessful: true, 
+          filteredItems: action.payload.filter(product => product.featured == false)
+  
       };
 
       case GetAllProducts_FAIL:

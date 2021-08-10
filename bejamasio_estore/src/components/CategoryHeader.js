@@ -1,6 +1,31 @@
-import React from "react";
-import mobileCategoryIcon from "../images/Group 31.png"; // with import
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import mobileCategoryIcon from "../images/Group 31.png";
+import { sortProductsByPrice,sortProductsAlphabetically } from "../actions/sortActions";
+
 function CategoryHeader() {
+  const [productSortByPrice, setProductSortByPrice] = useState("");
+  const [productSortByAlpha, setProductSortByAlpha] = useState("");
+
+  const dispatch = useDispatch();
+  
+  const filteredProducts = useSelector((state) => state.GetAllProducts);
+  const { filteredItems } = filteredProducts;
+
+  const sortProductAlpha = (sort) => {  
+    setProductSortByAlpha(sort)
+    console.log("sort alpha", sort);
+    dispatch(sortProductsAlphabetically(sort, filteredItems));
+    // console.log(filteredItems, 'filter Items <=')
+  };
+
+  const sortProductByPrice = (sort) => {
+    setProductSortByPrice(sort);
+    console.log("sort by price:::::", sort);
+    console.log("filter Items :::: <=", filteredItems);
+    dispatch(sortProductsByPrice(sort, filteredItems));
+  };
+
   return (
     <>
       <section className="container d-flex justify-content-between">
@@ -23,16 +48,20 @@ function CategoryHeader() {
         </div>
 
         <div className="d-none d-sm-block d-sm-none d-md-block">
-          <select name="cars" id="cars">
-            <option value="volvo">Ascending</option>
-            <option value="volvo">Descending</option>
+          <select
+            onChange={(e) => sortProductAlpha(e.target.value)}
+            value={productSortByAlpha}
+          >
+            <option value="Ascending">Ascending</option>
+            <option value="Descending">Descending</option>
           </select>
           Sort By &nbsp;&nbsp; Price
-          <select name="cars" id="cars">
-            <option value="volvo">Lower than $20</option>
-            <option value="volvo">$20 - $100</option>
-            <option value="volvo">$100 - $200</option>
-            <option value="volvo">More than $200</option>
+          <select
+            onChange={(e) => sortProductByPrice(e.target.value)}
+            value={productSortByPrice}
+          >
+            <option value="lowest">lowest</option>
+            <option value="highest">highest</option>
           </select>
         </div>
       </section>

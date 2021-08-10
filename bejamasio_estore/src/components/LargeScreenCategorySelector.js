@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+// import { useDispatch, useSelector } from "react-redux";
+
 
 function LargeScreenCategorySelector() {
     return (
@@ -10,49 +12,49 @@ function LargeScreenCategorySelector() {
             <div className="checkbox-example">
               <input type="checkbox" value="1" id="checkboxOneInput" />
               &nbsp;
-              <label for="checkboxOneInput">People</label>
+              <label htmlFor="checkboxOneInput">People</label>
             </div>
           </div>
           <div className="mt-2 mb-3 form-inline">
             <div className="checkbox-example">
               <input type="checkbox" value="1" id="checkboxOneInput" />
               &nbsp;
-              <label for="checkboxOneInput">Premium</label>
+              <label htmlFor="checkboxOneInput">Premium</label>
             </div>
           </div>
           <div className="mt-2 mb-3 form-inline">
             <div className="checkbox-example">
               <input type="checkbox" value="1" id="checkboxOneInput" />
               &nbsp;
-              <label for="checkboxOneInput">Pets</label>
+              <label htmlFor="checkboxOneInput">Pets</label>
             </div>
           </div>
           <div className="mt-2 mb-3 form-inline">
             <div className="checkbox-example">
               <input type="checkbox" value="1" id="checkboxOneInput" />
               &nbsp;
-              <label for="checkboxOneInput">Food</label>
+              <label htmlFor="checkboxOneInput">Food</label>
             </div>
           </div>
           <div className="mt-2 mb-3 form-inline">
             <div className="checkbox-example">
               <input type="checkbox" value="1" id="checkboxOneInput" />
               &nbsp;
-              <label for="checkboxOneInput">Landmarks</label>
+              <label htmlFor="checkboxOneInput">Landmarks</label>
             </div>
           </div>
           <div className="mt-2 mb-3 form-inline">
             <div className="checkbox-example">
               <input type="checkbox" value="1" id="checkboxOneInput" />
               &nbsp;
-              <label for="checkboxOneInput">Cities</label>
+              <label htmlFor="checkboxOneInput">Cities</label>
             </div>
           </div>
           <div className="mt-2 mb-3 form-inline">
             <div className="checkbox-example">
               <input type="checkbox" value="1" id="checkboxOneInput" />
               &nbsp;
-              <label for="checkboxOneInput">Nature</label>
+              <label htmlFor="checkboxOneInput">Nature</label>
             </div>
           </div>
           <div className="">
@@ -67,28 +69,28 @@ function LargeScreenCategorySelector() {
             <div className="checkbox-example">
               <input type="checkbox" value="1" id="checkboxOneInput" />
               &nbsp;
-              <label for="checkboxOneInput">Lower than $20</label>
+              <label htmlFor="checkboxOneInput">Lower than $20</label>
             </div>
           </div>
           <div className="mt-2 mb-3 form-inline">
             <div className="checkbox-example">
               <input type="checkbox" value="1" id="checkboxOneInput" />
               &nbsp;
-              <label for="checkboxOneInput">$20 - $100</label>
+              <label htmlFor="checkboxOneInput">$20 - $100</label>
             </div>
           </div>
           <div className="mt-2 mb-3 form-inline">
             <div className="checkbox-example">
               <input type="checkbox" value="1" id="checkboxOneInput" />
               &nbsp;
-              <label for="checkboxOneInput">$100 - $200</label>
+              <label htmlFor="checkboxOneInput">$100 - $200</label>
             </div>
           </div>
           <div className="mt-2 mb-3 form-inline">
             <div className="checkbox-example">
               <input type="checkbox" value="1" id="checkboxOneInput" />
               &nbsp;
-              <label for="checkboxOneInput">More than $200</label>
+              <label htmlFor="checkboxOneInput">More than $200</label>
             </div>
           </div>
         </div>

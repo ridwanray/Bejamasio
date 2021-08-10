@@ -32,7 +32,7 @@ function FeatureProductDetails() {
     <>
       {FetchingProductLoading ? (
         <div className="mt-5 container d-flex justify-content-center text-center text-muted h4">
-          <span class="visually-hidden">Loading...</span>
+          <span className="visually-hidden">Loading...</span>
         </div>
       ) : error ? (
         <div className="text-center ml-5 d-flex justify-content-center container">

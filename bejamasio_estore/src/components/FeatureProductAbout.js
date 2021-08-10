@@ -21,9 +21,9 @@ function FeatureProductAbout() {
       {FetchingProductLoading ? (
         <div className="mt-5 container d-flex justify-content-center text-center text-muted h4">
           <div>
-            {/* <div class="spinner-border spinner-border-sm" role="status"> */}
-            <span class="visually-hidden">Loading...</span>
-            {/* </div> */}
+           
+            <span className="visually-hidden">Loading...</span>
+            
           </div>
         </div>
       ) : error ? (

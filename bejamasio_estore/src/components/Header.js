@@ -7,6 +7,7 @@ function Header() {
   const openCartNav = () => {
     document.getElementById("mySidenav").style.width = "300px";
     document.getElementById("mySidenav").style.display = "inline";
+    document.getElementById("counterbadge").style.display = "inline";
   };
 
   const CartInfo = useSelector((state) => state.Cart);

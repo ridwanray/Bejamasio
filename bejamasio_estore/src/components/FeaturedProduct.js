@@ -11,9 +11,8 @@ function FeaturedProduct() {
   
   const addItemToCart = (productData)=>{
     console.log('item added', productData);
-    // console.log((productData[0].image.src))
     dispatch(addToCart(productData));
-    // console.log(Object.values(productData), 'neyo');
+
 
   }
   
@@ -33,8 +32,8 @@ function FeaturedProduct() {
 
           <div>
             <span className="d-flex justify-content-center">Loading data ...</span>
-            <div class="spinner-border spinner-border-sm" role="status">
-              <span class="visually-hidden">Loading...</span>
+            <div className="spinner-border spinner-border-sm" role="status">
+              <span className="visually-hidden">Loading...</span>
             </div>
           </div>
 
@@ -57,12 +56,13 @@ function FeaturedProduct() {
                 </button>
               </section>
               <section className="container mt-2">
-                <img className="container" src={featuredProduct[0].image.src} alt="Feature Image" />
+                <img className="container" src={featuredProduct[0].image.src} alt="Feature Image" height='350px' />
                 <div className="bottomleft">Photo of the day</div>
               </section>
               <section>
                 <div className="mt-3 d-grid gap-2 container border-1 d-block d-sm-none">
                   <button
+                  onClick={()=>{addItemToCart(featuredProduct[0])}} 
                     className="btn btn-md btn-block bg-dark text-white"
                     type="button"
                   >
