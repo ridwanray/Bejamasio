@@ -6,13 +6,17 @@ import {
     getAllProductsReducer,
 } from "./productReducers";
 
+import {
+  cartReducers
+} from "./cartReducers";
+
 
 const rootReducer = combineReducers({
   firebase: firebaseReducer,
   firestore: firestoreReducer,
 
   GetAllProducts:getAllProductsReducer,
-
+  Cart:cartReducers,
 
 });
 

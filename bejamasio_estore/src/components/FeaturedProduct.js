@@ -1,10 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import {addToCart} from '../actions/cartActions'
 
 function FeaturedProduct() {
   const ProductsInfo = useSelector((state) => state.GetAllProducts);
-  const [featuredProduct, setFeaturedProduct] = useState([])
+  const [featuredProduct, setFeaturedProduct] = useState('')
   const { FetchingProductLoading, products, error, ProductFetchedSuccessful } = ProductsInfo;
+
+  const dispatch = useDispatch();
+  
+  const addItemToCart = (productData)=>{
+    console.log('item added', productData);
+    // console.log((productData[0].image.src))
+    dispatch(addToCart(productData));
+    // console.log(Object.values(productData), 'neyo');
+
+  }
+  
+   
 
   useEffect(() => {
     {
@@ -39,7 +52,7 @@ function FeaturedProduct() {
                   <strong>{featuredProduct[0].name}</strong>
                 </div>
 
-                <button className="btn btn-sm btn-block bg-dark text-white d-none d-sm-block">
+                <button onClick={()=>{addItemToCart(featuredProduct[0])}} className="btn btn-sm btn-block bg-dark text-white d-none d-sm-block">
                   <span>ADD TO CART</span>
                 </button>
               </section>
