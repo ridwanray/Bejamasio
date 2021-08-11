@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector } from "react-redux";
 import cartImage from "../images/Group 3.1.png";
 
-
 function Header() {
   const openCartNav = () => {
     document.getElementById("mySidenav").style.width = "300px";
@@ -31,8 +30,8 @@ function Header() {
             height="25"
           />
           <span
-            id='counterbadge'
-            style={{ fontSize: "x-small", display:'none' }}
+            id="counterbadge"
+            style={{ fontSize: "x-small", display: "none" }}
             className="position-absolute bottom-0 start-100 pr-n3 translate-middle badge bg-secondary"
           >
             {cartItems ? cartItems.length : "0"}

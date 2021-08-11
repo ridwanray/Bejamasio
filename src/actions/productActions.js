@@ -15,17 +15,17 @@ export const fetchProducts = () => {
       .then((querySnapshot) => {
         const ProductData = [];
         querySnapshot.forEach((doc) => {
-          ProductData.push(
-            (doc.data())
-          );       
+          ProductData.push(doc.data());
         });
         console.log(ProductData);
-        console.log('------------')
-        const featuredProducts =  ProductData.filter(product => product.featured === true)
-        console.log(featuredProducts[0].name)
+        console.log("------------");
+        const featuredProducts = ProductData.filter(
+          (product) => product.featured === true
+        );
+        console.log(featuredProducts[0].name);
         dispatch({
           type: GetAllProducts_SUCCESS,
-          payload:ProductData
+          payload: ProductData,
         });
       })
       .catch((error) => {

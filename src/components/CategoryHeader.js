@@ -1,19 +1,22 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import mobileCategoryIcon from "../images/Group 31.png";
-import { sortProductsByPrice,sortProductsAlphabetically } from "../actions/sortActions";
+import {
+  sortProductsByPrice,
+  sortProductsAlphabetically,
+} from "../actions/sortActions";
 
 function CategoryHeader() {
   const [productSortByPrice, setProductSortByPrice] = useState("");
   const [productSortByAlpha, setProductSortByAlpha] = useState("");
 
   const dispatch = useDispatch();
-  
+
   const filteredProducts = useSelector((state) => state.GetAllProducts);
   const { filteredItems } = filteredProducts;
 
-  const sortProductAlpha = (sort) => {  
-    setProductSortByAlpha(sort)
+  const sortProductAlpha = (sort) => {
+    setProductSortByAlpha(sort);
     console.log("sort alpha", sort);
     dispatch(sortProductsAlphabetically(sort, filteredItems));
     // console.log(filteredItems, 'filter Items <=')
@@ -44,6 +47,8 @@ function CategoryHeader() {
             data-bs-target="#exampleModal"
             className="img-fluid"
             alt="Category Selector Icon"
+            height='25'
+            width='25'
           />
         </div>
 
@@ -61,7 +66,7 @@ function CategoryHeader() {
             onChange={(e) => sortProductByPrice(e.target.value)}
             value={productSortByPrice}
           >
-             {/* <option value="lowest">Choose</option> */}
+            {/* <option value="lowest">Choose</option> */}
             <option value="lowest">lowest</option>
             <option value="highest">highest</option>
           </select>

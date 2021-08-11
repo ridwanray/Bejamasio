@@ -2,7 +2,6 @@ import React, { useCallback, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { filterProductsByPriceAndCategory } from "../actions/filterActions";
 import toast from "react-hot-toast";
-// import { handleCategoryFilterCheckboxChange } from "../utils";
 
 function LargeScreenCategorySelector() {
   const dispatch = useDispatch();
@@ -45,7 +44,6 @@ function LargeScreenCategorySelector() {
     productFilterByPrice === "" &&
       productSortByCategories.length > 0 &&
       toast.error("Please select price 💰 range to filter");
-      
 
     console.log("consoling from Category selector effect----");
   }, [productFilterByPrice, productSortByCategories, FireFilterActions]);

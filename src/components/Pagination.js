@@ -1,4 +1,4 @@
-import React, { useState }  from "react";
+import React, { useState } from "react";
 import arrowLeft from "../images/Vector 1 (1).png";
 import arrowRight from "../images/Vector 2 (1).png";
 
@@ -58,7 +58,9 @@ export default function Pagination({
           className={`prev ${currentPage === 1 ? "disabled" : ""}`}
         >
           <span>
-            <img src={arrowLeft} alt="" />
+            <img
+            width='10' height='10'
+             src={arrowLeft} alt="back-arrow" />
           </span>
         </button>
 
@@ -86,7 +88,7 @@ export default function Pagination({
           className={`next ${currentPage === pages ? "disabled" : ""}`}
         >
           <span>
-            <img src={arrowRight} alt="" />
+            <img width='10' height='10' src={arrowRight} alt="next-arrow" />
           </span>
         </button>
       </div>

@@ -14,7 +14,6 @@ function FeatureProductDetails() {
       );
   }, [products]);
 
-
   return (
     <>
       {FetchingProductLoading ? (
@@ -32,7 +31,7 @@ function FeatureProductDetails() {
               <section className="container mt-n3">
                 <div className="row">
                   <div className="col-8 d-none d-sm-block col-lg-8 col-xl-8 text-muted">
-                  {featuredProduct[0].details.smallDesc}
+                    {featuredProduct[0].details.smallDesc}
                   </div>
 
                   <div className="col-6 text-start mt-4 mt-xl-0  mt-lg-0  col-lg-4 col-xl-4 text-xl-end text-lg-end">
@@ -49,7 +48,8 @@ function FeatureProductDetails() {
                     <br />
                     {/* <span className="text-muted">Size: {formatBytes(15000)}</span> */}
                     <span className="text-muted">
-                      Size: {convertSize(featuredProduct[0].details.size * 1000)}
+                      Size:{" "}
+                      {convertSize(featuredProduct[0].details.size * 1000)}
                     </span>
                   </div>
                 </div>

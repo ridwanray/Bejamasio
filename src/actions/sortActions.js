@@ -4,12 +4,7 @@ import {
 } from "../constants/sortConstants";
 
 export const sortProductsByPrice = (sort, filteredItems) => (dispatch) => {
-  console.log(
-    "-From Actions sortProductsByPrice---",
-    filteredItems,
-    sort,
-    "---"
-  );
+  console.log("-From Actions sortProductsByPrice---", filteredItems, sort);
   const sortedProducts = filteredItems;
   if (sort === "lowest") {
     const sortedProducts = filteredItems.sort((a, b) =>

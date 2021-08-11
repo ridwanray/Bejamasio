@@ -1,7 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
-//Put these credentials in .env file and add .env gitignore
+//Put these credentials in .env file and add .env to gitignore
 
 var firebaseConfig = {
   apiKey: "AIzaSyD1w7ItY0U1hIlFHt2rYAWOE4exsCPx6vM",
@@ -11,7 +11,7 @@ var firebaseConfig = {
   storageBucket: "bejamasio-284e9.appspot.com",
   messagingSenderId: "310014956426",
   appId: "1:310014956426:web:76e78571912c8a682cae73",
-  measurementId: "G-GFPHNLTCSF"
+  measurementId: "G-GFPHNLTCSF",
 };
 
 firebase.initializeApp(firebaseConfig);

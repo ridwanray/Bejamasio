@@ -26,7 +26,6 @@ function FeatureProductAbout() {
           {error}
         </div>
       ) : (
-        // {featuredProduct.length > 0 &&}
         <>
           {featuredProduct.length > 0 && (
             <section className="container mt-4">
@@ -62,7 +61,7 @@ function FeatureProductAbout() {
                             <img
                               className=""
                               src={recommeds.src}
-                              alt=""
+                              alt="recommendations-image"
                               width="100"
                               height="120"
                             />

@@ -44,9 +44,8 @@ function MobileFilterModal() {
     productFilterByPrice === "" &&
       productSortByCategories.length > 0 &&
       toast.error("Please select price 💰 range to filter");
-      
 
-    console.log("consoling from Category selector effect----");
+      console.log("consoling from Category selector effect----");
   }, [productFilterByPrice, productSortByCategories, FireFilterActions]);
   return (
     <>
@@ -59,12 +58,15 @@ function MobileFilterModal() {
       >
         <div className="modal-dialog modal-sm">
           <div className="modal-content">
-            <div className="modal-header" style={{backgroundColor: "#cccccc"}}>
+            <div
+              className="modal-header"
+              style={{ backgroundColor: "#cccccc" }}
+            >
               <h5 className="modal-title form-inline " id="exampleModalLabel">
                 <span>
                   <strong>Photography /</strong>{" "}
                 </span>{" "}
-                <span className="small" style={{fontSize: "12px"}}>
+                <span className="small" style={{ fontSize: "12px" }}>
                   {" "}
                   <small> Premium Photos</small>
                 </span>
@@ -90,88 +92,137 @@ function MobileFilterModal() {
               </div>
 
               <div>
-                              <div onChange={handleCategoryFilterCheckboxChange}>
-                                <div className="mt-2 mb-3 form-inline">
-                                  <div className="checkbox-example">
-                                    <input type="checkbox"  value="people" id="checkboxOneInput" />
-                                    &nbsp;
-                                    <label htmlFor="checkboxOneInput">People</label>
-                                  </div>
-                                </div>
-
-                                <div className="mt-2 mb-3 form-inline">
-                                  <div className="checkbox-example">
-                                    <input type="checkbox" value="premiun" id="checkboxOneInput" />
-                                    &nbsp;<label htmlFor="checkboxOneInput">Premium</label>
-                                  </div>
-                                </div>
-
-                                <div className="mt-2 mb-3 form-inline">
-                                  <div className="checkbox-example">
-                                    <input type="checkbox" value="pets" id="checkboxOneInput" />
-                                    &nbsp;<label htmlFor="checkboxOneInput">Pets</label>
-                                  </div>
-                                </div>
-
-                                <div className="mt-2 mb-3 form-inline">
-                                  <div className="checkbox-example">
-                                    <input type="checkbox" value="food" id="checkboxOneInput" />
-                                    &nbsp;<label htmlFor="checkboxOneInput">Food</label>
-                                  </div>
-                                </div>
-
-                                <div className="mt-2 mb-3 form-inline">
-                                  <div className="checkbox-example">
-                                    <input type="checkbox" value="landmarks" id="checkboxOneInput" />
-                                    &nbsp;<label htmlFor="checkboxOneInput">Landmarks</label>
-                                  </div>
-                                </div>
-
-                                <div className="mt-2 mb-3 form-inline">
-                                  <div className="checkbox-example">
-                                    <input type="checkbox" value="cities" id="checkboxOneInput" />
-                                    &nbsp;<label htmlFor="checkboxOneInput">Cities</label>
-                                  </div>
-                                </div>
-
-                                <div className="mt-2 mb-3 form-inline">
-                                  <div className="checkbox-example">
-                                    <input type="checkbox" value="nature" id="checkboxOneInput" />
-                                    &nbsp;<label htmlFor="checkboxOneInput">Nature</label>
-                                  </div>
-                                </div>
-                              </div>
-
-                <strong className="h4"> Price range</strong>
-                  <div  onChange={(e) => {
-            setProductFilterByPrice(e.target.value);
-          }}>
-                    <div className="mt-2 mb-3 form-inline">
-                      <div className="checkbox-example">
-                        <input type="checkbox"  value="Lower than $20" id="checkboxOneInput" />
-                        &nbsp;<label htmlFor="checkboxOneInput">Lower than $20</label>
-                      </div>
-                    </div>
-
-                    <div className="mt-2 mb-3 form-inline">
-                      <div className="checkbox-example">
-                        <input type="checkbox" value="$20 - $100" id="checkboxOneInput" />
-                        &nbsp;<label htmlFor="checkboxOneInput">$20 - $100</label>
-                      </div>
-                    </div>
-                    <div className="mt-2 mb-3 form-inline">
-                      <div className="checkbox-example">
-                        <input type="checkbox" value="$100 - $200" id="checkboxOneInput" />
-                        &nbsp;<label htmlFor="checkboxOneInput">$100 - $200</label>
-                      </div>
-                    </div>
-                    <div className="mt-2 mb-3 form-inline">
-                      <div className="checkbox-example">
-                        <input type="checkbox"  value="More than $200" id="checkboxOneInput" />
-                        &nbsp;<label htmlFor="checkboxOneInput">More than $200</label>
-                      </div>
+                <div onChange={handleCategoryFilterCheckboxChange}>
+                  <div className="mt-2 mb-3 form-inline">
+                    <div className="checkbox-example">
+                      <input
+                        type="checkbox"
+                        value="people"
+                        
+                      />
+                      &nbsp;
+                      <label htmlFor="checkboxOneInput">People</label>
                     </div>
                   </div>
+
+                  <div className="mt-2 mb-3 form-inline">
+                    <div className="checkbox-example">
+                      <input
+                        type="checkbox"
+                        value="premiun"
+                        
+                      />
+                      &nbsp;<label htmlFor="checkboxOneInput">Premium</label>
+                    </div>
+                  </div>
+
+                  <div className="mt-2 mb-3 form-inline">
+                    <div className="checkbox-example">
+                      <input
+                        type="checkbox"
+                        value="pets"
+                        
+                      />
+                      &nbsp;<label htmlFor="checkboxOneInput">Pets</label>
+                    </div>
+                  </div>
+
+                  <div className="mt-2 mb-3 form-inline">
+                    <div className="checkbox-example">
+                      <input
+                        type="checkbox"
+                        value="food"
+                        
+                      />
+                      &nbsp;<label htmlFor="checkboxOneInput">Food</label>
+                    </div>
+                  </div>
+
+                  <div className="mt-2 mb-3 form-inline">
+                    <div className="checkbox-example">
+                      <input
+                        type="checkbox"
+                        value="landmarks"
+                        
+                      />
+                      &nbsp;<label htmlFor="checkboxOneInput">Landmarks</label>
+                    </div>
+                  </div>
+
+                  <div className="mt-2 mb-3 form-inline">
+                    <div className="checkbox-example">
+                      <input
+                        type="checkbox"
+                        value="cities"
+                        
+                      />
+                      &nbsp;<label htmlFor="checkboxOneInput">Cities</label>
+                    </div>
+                  </div>
+
+                  <div className="mt-2 mb-3 form-inline">
+                    <div className="checkbox-example">
+                      <input
+                        type="checkbox"
+                        value="nature"
+                        
+                      />
+                      &nbsp;<label htmlFor="checkboxOneInput">Nature</label>
+                    </div>
+                  </div>
+                </div>
+
+                <strong className="h4"> Price range</strong>
+                <div
+                  onChange={(e) => {
+                    setProductFilterByPrice(e.target.value);
+                  }}
+                >
+                  <div className="mt-2 mb-3 form-inline">
+                    <div className="checkbox-example">
+                      <input
+                        type="checkbox"
+                        value="Lower than $20"
+                        
+                      />
+                      &nbsp;
+                      <label htmlFor="checkboxOneInput">Lower than $20</label>
+                    </div>
+                  </div>
+
+                  <div className="mt-2 mb-3 form-inline">
+                    <div className="checkbox-example">
+                      <input
+                        type="checkbox"
+                        value="$20 - $100"
+                        
+                      />
+                      &nbsp;<label htmlFor="checkboxOneInput">$20 - $100</label>
+                    </div>
+                  </div>
+                  <div className="mt-2 mb-3 form-inline">
+                    <div className="checkbox-example">
+                      <input
+                        type="checkbox"
+                        value="$100 - $200"
+                        
+                      />
+                      &nbsp;
+                      <label htmlFor="checkboxOneInput">$100 - $200</label>
+                    </div>
+                  </div>
+                  <div className="mt-2 mb-3 form-inline">
+                    <div className="checkbox-example">
+                      <input
+                        type="checkbox"
+                        value="More than $200"
+                        
+                      />
+                      &nbsp;
+                      <label htmlFor="checkboxOneInput">More than $200</label>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div className=" modal-footer border-3 form-inline  d-flex  justify-content-between ">

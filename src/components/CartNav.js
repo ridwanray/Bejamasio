@@ -1,11 +1,10 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {clearCartItems} from '../actions/cartActions'
+import { clearCartItems } from "../actions/cartActions";
 
 function CartNav() {
-
   const dispatch = useDispatch();
-  
+
   const closeCartNav = () => {
     document.getElementById("mySidenav").style.display = "none";
     document.getElementById("counterbadge").style.display = "none";
@@ -14,10 +13,10 @@ function CartNav() {
   const CartItemsInfo = useSelector((state) => state.Cart);
   const { cartItems } = CartItemsInfo;
 
-  const clearCart = ()=>{
-    console.log('items to be cleared')
+  const clearCart = () => {
+    console.log("items to be cleared");
     dispatch(clearCartItems());
-  }
+  };
 
   return (
     <>
@@ -68,7 +67,14 @@ function CartNav() {
 
             {cartItems.length > 0 && (
               <div className="container text-center d-grid gap-2 fixed-bottom">
-                <button onClick={()=>{clearCart()}} type="button" className="btn btn-outline-dark btn-md ">
+                <button
+                aria-label='Clear-cart-items'
+                  onClick={() => {
+                    clearCart();
+                  }}
+                  type="button"
+                  className="btn btn-outline-dark btn-md "
+                >
                   CLEAR
                 </button>
               </div>
