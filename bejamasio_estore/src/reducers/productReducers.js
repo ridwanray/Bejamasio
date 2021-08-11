@@ -14,7 +14,7 @@ import {
           products: action.payload,
           FetchingProductLoading: false,
           ProductFetchedSuccessful: true, 
-          filteredItems: action.payload.filter(product => product.featured == false)
+          filteredItems: action.payload.filter(product => product.featured === false)
   
       };
 

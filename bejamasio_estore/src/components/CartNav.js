@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import imageProd from "../images/pexels-evgeny-tchebotarev-2187304 (1) 1.png";
 import {clearCartItems} from '../actions/cartActions'
 
 function CartNav() {
@@ -69,13 +68,13 @@ function CartNav() {
 
             {cartItems.length > 0 && (
               <div className="container text-center d-grid gap-2 fixed-bottom">
-                <button onClick={()=>{clearCart()}} type="button" class="btn btn-outline-dark btn-md ">
+                <button onClick={()=>{clearCart()}} type="button" className="btn btn-outline-dark btn-md ">
                   CLEAR
                 </button>
               </div>
             )}
 
-            {cartItems.length == 0 && (
+            {cartItems.length === 0 && (
               <div className="container text-center d-grid gap-2 fixed-bottom">
                 No items in the cart
               </div>

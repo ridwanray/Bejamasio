@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import LargeScreenCategorySelector from "./LargeScreenCategorySelector";
 import Product from "./Product";
 import Pagination from "./Pagination";
@@ -7,30 +7,20 @@ import Pagination from "./Pagination";
 function ProductListsSection() {
   const ProductsInfo = useSelector((state) => state.GetAllProducts);
   const [allproducts, setAllProducts] = useState([]);
-  const { FetchingProductLoading, products, error, ProductFetchedSuccessful } =
-    ProductsInfo;
+  const { FetchingProductLoading, products, error } = ProductsInfo;
 
   const sortedProductItems = useSelector((state) => state.sortedProducts);
-  const { sortedItems} = sortedProductItems;
-
+  const { sortedItems } = sortedProductItems;
 
   useEffect(() => {
-    {
-      products &&
-        setAllProducts(products.filter((product) => product.featured == false));
-    }
-    console.log(
-      products.filter((product) => product.featured == false),
-      
-    );
+    products &&
+      setAllProducts(products.filter((product) => product.featured === false));
+    console.log(products.filter((product) => product.featured === false));
   }, [products]);
 
-
-    useEffect(() => {
-    {
-      setAllProducts(sortedItems);
-      console.log('coming from sorted Effects---', sortedItems, '-----')
-    }
+  useEffect(() => {
+    setAllProducts(sortedItems);
+    console.log("coming from sorted Effects---", sortedItems, "-----");
   }, [sortedItems]);
 
   return (
@@ -46,7 +36,10 @@ function ProductListsSection() {
                     <span className=" d-flex justify-content-center">
                       Loading data ...
                     </span>
-                    <div className="spinner-border spinner-border-sm" role="status">
+                    <div
+                      className="spinner-border spinner-border-sm"
+                      role="status"
+                    >
                       <span className="visually-hidden">Loading...</span>
                     </div>
                   </div>

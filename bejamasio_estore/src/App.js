@@ -8,8 +8,8 @@ import Header from "./components/Header";
 import MobileFilterModal from "./components/MobileFilterModal";
 import ProductListsSection from "./components/ProductListsSection";
 import { fetchProducts } from "./actions/productActions";
-import { useDispatch, useSelector } from "react-redux";
-import { Toaster } from 'react-hot-toast';
+import { useDispatch } from "react-redux";
+import { Toaster } from "react-hot-toast";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
@@ -17,12 +17,12 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchProducts());
-    console.log("Hey, Effect coming from App");
-  }, []);
+    console.log("Consoling..., Effect coming from App");
+  }, [dispatch]);
 
   return (
     <>
-    <Toaster/>
+      <Toaster />
       <Header />
       <CartNav />
       <FeaturedProduct />

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 import cartImage from "../images/Group 3.1.png";
-import {addToCart} from '../actions/cartActions'
+
 
 function Header() {
   const openCartNav = () => {

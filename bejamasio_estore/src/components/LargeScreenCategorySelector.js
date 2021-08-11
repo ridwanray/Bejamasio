@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import {filterProductsByPriceAndCategory} from '../actions/filterActions'
+import React, { useCallback,useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { filterProductsByPriceAndCategory } from "../actions/filterActions";
+import toast from "react-hot-toast";
 
 function LargeScreenCategorySelector() {
-
   const dispatch = useDispatch();
+  const ProductsInfo = useSelector((state) => state.GetAllProducts);
+  const { filteredItems } = ProductsInfo;
+
   const [productFilterByPrice, setProductFilterByPrice] = useState("");
   const [productSortByCategories, setProductSortByCategories] = useState([]);
 
@@ -12,33 +15,40 @@ function LargeScreenCategorySelector() {
     // console.log(e.target.value, e.target.checked);
     const checkedStatus = e.target.checked;
 
-    const  newFIlter =  (value) => {
-      const result = productSortByCategories.filter(word => word !== value);
+    const newFIlter = (value) => {
+      const result = productSortByCategories.filter(
+        (categoryword) => categoryword !== value
+      );
       console.log(result);
-     setProductSortByCategories(result)
-  
+      setProductSortByCategories(result);
     };
 
     checkedStatus
       ? setProductSortByCategories([...productSortByCategories, e.target.value])
       : newFIlter(e.target.value);
   };
+  
+  const FireFilterActions = useCallback(() => {
+    dispatch(
+      filterProductsByPriceAndCategory(
+        productFilterByPrice,
+        productSortByCategories,
+        filteredItems
+      )
+    );
+  }, [dispatch,productFilterByPrice,productSortByCategories,filteredItems]);
 
- //dispatch(filterProductsByPriceAndCategory(productFilterByPrice,productSortByCategories));
+  useEffect(() => {
+    productFilterByPrice !== "" && FireFilterActions();
 
-  const FireFilterActions = ()=>{
-    dispatch(filterProductsByPriceAndCategory(productFilterByPrice,productSortByCategories));
-    
+    productFilterByPrice === "" &&
+      productSortByCategories.length > 0 &&
+      toast.error("Please select price 💰 range to filter");
 
-  }
-
-  useEffect(()=>{
-    FireFilterActions()
-    console.log('consoling from Category selector effect----')
-  },[productFilterByPrice,productSortByCategories])
+    console.log("consoling from Category selector effect----");
+  }, [productFilterByPrice, productSortByCategories,FireFilterActions]);
   return (
     <>
-
       <div className="col-3 d-none d-sm-block">
         <strong> Category</strong>
         <br />
@@ -54,8 +64,7 @@ function LargeScreenCategorySelector() {
             <div className="checkbox-example">
               <input type="checkbox" value="premiun" id="" />
               &nbsp;
-              <label htmlFor="">Premium
-              </label>
+              <label htmlFor="">Premium</label>
             </div>
           </div>
           <div className="mt-2 mb-3 form-inline">

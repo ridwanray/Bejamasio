@@ -4,29 +4,26 @@ import { useSelector } from "react-redux";
 function FeatureProductDetails() {
   const ProductsInfo = useSelector((state) => state.GetAllProducts);
   const [featuredProduct, setFeaturedProduct] = useState([]);
-  const { FetchingProductLoading, products, error, ProductFetchedSuccessful } =
-    ProductsInfo;
+  const { FetchingProductLoading, products, error } = ProductsInfo;
 
   useEffect(() => {
-    {
-      products &&
-        setFeaturedProduct(
-          products.filter((product) => product.featured == true)
-        );
-    }
+    products &&
+      setFeaturedProduct(
+        products.filter((product) => product.featured === true)
+      );
   }, [products]);
 
-  const formatBytes = (bytes, decimals = 2)=>{
-    if (bytes === 0) return '0 Bytes';
+  // const formatBytes = (bytes, decimals = 2)=>{
+  //   if (bytes === 0) return '0 Bytes';
 
-    const k = 1024 * 1000;
-    const dm = decimals < 0 ? 0 : decimals;
-    const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+  //   const k = 1024 * 1000;
+  //   const dm = decimals < 0 ? 0 : decimals;
+  //   const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
 
-    const i = Math.floor(Math.log(bytes) / Math.log(k));
+  //   const i = Math.floor(Math.log(bytes) / Math.log(k));
 
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
-  }  
+  //   return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+  // }
 
   return (
     <>
@@ -58,15 +55,16 @@ function FeatureProductDetails() {
                     </span>{" "}
                     <br />
                     <span className="pt-2 text-muted">
-                      Size: 
+                      Size:
                       {featuredProduct[0].details.dimmentions.height}
                       &nbsp;X&nbsp;
                       {featuredProduct[0].details.dimmentions.width} Pixel
-                     
                     </span>{" "}
                     <br />
-                     {/* <span className="text-muted">Size: {formatBytes(15000)}</span> */}
-                    <span className="text-muted">Size: {featuredProduct[0].details.size} </span>
+                    {/* <span className="text-muted">Size: {formatBytes(15000)}</span> */}
+                    <span className="text-muted">
+                      Size: {featuredProduct[0].details.size}{" "}
+                    </span>
                   </div>
                 </div>
               </section>

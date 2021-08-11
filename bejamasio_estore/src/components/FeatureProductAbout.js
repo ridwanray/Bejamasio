@@ -1,19 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 function FeatureProductAbout() {
   const ProductsInfo = useSelector((state) => state.GetAllProducts);
   const [featuredProduct, setFeaturedProduct] = useState([]);
-  const { FetchingProductLoading, products, error, ProductFetchedSuccessful } =
-    ProductsInfo;
+  const { FetchingProductLoading, products, error } = ProductsInfo;
 
   useEffect(() => {
-    {
-      products &&
-        setFeaturedProduct(
-          products.filter((product) => product.featured == true)
-        );
-    }
+    products &&
+      setFeaturedProduct(
+        products.filter((product) => product.featured === true)
+      );
   }, [products]);
 
   return (
@@ -21,9 +18,7 @@ function FeatureProductAbout() {
       {FetchingProductLoading ? (
         <div className="mt-5 container d-flex justify-content-center text-center text-muted h4">
           <div>
-           
             <span className="visually-hidden">Loading...</span>
-            
           </div>
         </div>
       ) : error ? (
@@ -64,13 +59,14 @@ function FeatureProductAbout() {
                       {featuredProduct[0].details.recommendations.map(
                         (recommeds) => (
                           <React.Fragment key={recommeds.src}>
-                          <img 
-                            className=""
-                            src={recommeds.src}
-                            alt=""
-                            width="100"
-                            height="120"
-                          />&nbsp;
+                            <img
+                              className=""
+                              src={recommeds.src}
+                              alt=""
+                              width="100"
+                              height="120"
+                            />
+                            &nbsp;
                           </React.Fragment>
                         )
                       )}

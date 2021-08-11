@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState }  from "react";
 import arrowLeft from "../images/Vector 1 (1).png";
 import arrowRight from "../images/Vector 2 (1).png";
 

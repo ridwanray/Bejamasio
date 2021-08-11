@@ -21,7 +21,7 @@ export const fetchProducts = () => {
         });
         console.log(ProductData);
         console.log('------------')
-        const featuredProducts =  ProductData.filter(product => product.featured == true)
+        const featuredProducts =  ProductData.filter(product => product.featured === true)
         console.log(featuredProducts[0].name)
         dispatch({
           type: GetAllProducts_SUCCESS,

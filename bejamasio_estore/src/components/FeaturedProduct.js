@@ -5,7 +5,7 @@ import {addToCart} from '../actions/cartActions'
 function FeaturedProduct() {
   const ProductsInfo = useSelector((state) => state.GetAllProducts);
   const [featuredProduct, setFeaturedProduct] = useState('')
-  const { FetchingProductLoading, products, error, ProductFetchedSuccessful } = ProductsInfo;
+  const { FetchingProductLoading, products, error } = ProductsInfo;
 
   const dispatch = useDispatch();
   
@@ -19,10 +19,10 @@ function FeaturedProduct() {
    
 
   useEffect(() => {
-    {
+  
       products
-        && setFeaturedProduct(products.filter(product => product.featured == true));
-    }
+        && setFeaturedProduct(products.filter(product => product.featured === true));
+  
   }, [products]);
 
   return (
@@ -56,7 +56,7 @@ function FeaturedProduct() {
                 </button>
               </section>
               <section className="container mt-2">
-                <img className="container" src={featuredProduct[0].image.src} alt="Feature Image" width="25" height="300" />
+                <img className="container" src={featuredProduct[0].image.src} alt={featuredProduct[0].image.src} width="25" height="300" />
                 <div className="bottomleft">Photo of the day</div>
               </section>
               <section>

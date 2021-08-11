@@ -1,4 +1,4 @@
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 import { ADD_TO_CART, CLEAR_CART } from "../constants/cartConstants";
 
 export const addToCart = (productData) => (dispatch, getState) =>{

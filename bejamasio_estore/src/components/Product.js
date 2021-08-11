@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useDispatch} from "react-redux";
 import {addToCart} from '../actions/cartActions'
 function Product(props) {
 
@@ -8,8 +8,7 @@ function Product(props) {
   const productData = props.data
   const dispatch = useDispatch();
   
-  const AllProducts = useSelector((state) => state.GetAllProducts);
-  const { products} = AllProducts;
+
 
 
 
