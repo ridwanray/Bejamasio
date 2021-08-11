@@ -1,7 +1,8 @@
-import React, { useCallback,useState, useEffect } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { filterProductsByPriceAndCategory } from "../actions/filterActions";
 import toast from "react-hot-toast";
+// import { handleCategoryFilterCheckboxChange } from "../utils";
 
 function LargeScreenCategorySelector() {
   const dispatch = useDispatch();
@@ -27,7 +28,7 @@ function LargeScreenCategorySelector() {
       ? setProductSortByCategories([...productSortByCategories, e.target.value])
       : newFIlter(e.target.value);
   };
-  
+
   const FireFilterActions = useCallback(() => {
     dispatch(
       filterProductsByPriceAndCategory(
@@ -36,7 +37,7 @@ function LargeScreenCategorySelector() {
         filteredItems
       )
     );
-  }, [dispatch,productFilterByPrice,productSortByCategories,filteredItems]);
+  }, [dispatch, productFilterByPrice, productSortByCategories, filteredItems]);
 
   useEffect(() => {
     productFilterByPrice !== "" && FireFilterActions();
@@ -44,9 +45,10 @@ function LargeScreenCategorySelector() {
     productFilterByPrice === "" &&
       productSortByCategories.length > 0 &&
       toast.error("Please select price 💰 range to filter");
+      
 
     console.log("consoling from Category selector effect----");
-  }, [productFilterByPrice, productSortByCategories,FireFilterActions]);
+  }, [productFilterByPrice, productSortByCategories, FireFilterActions]);
   return (
     <>
       <div className="col-3 d-none d-sm-block">

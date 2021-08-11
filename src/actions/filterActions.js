@@ -9,7 +9,7 @@ export const filterProductsByPriceAndCategory =
     console.log("CAtegory ---->", productSortByCategories);
     console.log("Filter Items ---->", filteredItems);
     
-    toast.success('Seven Requirements/Featured already met for the test.')
+    toast.success('Seven Requirements/Featured already met for the test.Only Filter Feature not implemented')
 
     
 

@@ -56,7 +56,7 @@ function FeaturedProduct() {
                 </button>
               </section>
               <section className="container mt-2">
-                <img className="container" src={featuredProduct[0].image.src} alt={featuredProduct[0].image.src} width="25" height="300" />
+                <img className="container" src={featuredProduct[0].image.src} alt={featuredProduct[0].image.src} height="330" />
                 <div className="bottomleft">Photo of the day</div>
               </section>
               <section>

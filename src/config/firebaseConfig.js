@@ -1,7 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
-//Put these credentials in .env file and in gitignore
+//Put these credentials in .env file and add .env gitignore
 
 var firebaseConfig = {
   apiKey: "AIzaSyD1w7ItY0U1hIlFHt2rYAWOE4exsCPx6vM",
