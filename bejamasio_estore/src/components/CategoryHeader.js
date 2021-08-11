@@ -52,6 +52,7 @@ function CategoryHeader() {
             onChange={(e) => sortProductAlpha(e.target.value)}
             value={productSortByAlpha}
           >
+            {/* <option value="Ascending">Choose</option> */}
             <option value="Ascending">Ascending</option>
             <option value="Descending">Descending</option>
           </select>
@@ -60,6 +61,7 @@ function CategoryHeader() {
             onChange={(e) => sortProductByPrice(e.target.value)}
             value={productSortByPrice}
           >
+             {/* <option value="lowest">Choose</option> */}
             <option value="lowest">lowest</option>
             <option value="highest">highest</option>
           </select>
