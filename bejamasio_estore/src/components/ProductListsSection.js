@@ -10,6 +10,10 @@ function ProductListsSection() {
   const { FetchingProductLoading, products, error, ProductFetchedSuccessful } =
     ProductsInfo;
 
+  const sortedProductItems = useSelector((state) => state.sortedProducts);
+  const { sortedItems} = sortedProductItems;
+
+
   useEffect(() => {
     {
       products &&
@@ -17,9 +21,17 @@ function ProductListsSection() {
     }
     console.log(
       products.filter((product) => product.featured == false),
-      "ade"
+      
     );
   }, [products]);
+
+
+    useEffect(() => {
+    {
+      setAllProducts(sortedItems);
+      console.log('coming from sorted Effects---', sortedItems, '-----')
+    }
+  }, [sortedItems]);
 
   return (
     <section className="container mt-3">

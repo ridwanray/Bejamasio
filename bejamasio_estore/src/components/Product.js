@@ -7,18 +7,17 @@ function Product(props) {
 
   const productData = props.data
   const dispatch = useDispatch();
-
-
-
   
   const AllProducts = useSelector((state) => state.GetAllProducts);
   const { products} = AllProducts;
+
 
 
   const addItemToCart = (productData)=>{
       console.log('item added', productData);
       dispatch(addToCart(productData));
   }
+
 
 
   return (

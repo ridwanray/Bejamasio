@@ -33,13 +33,12 @@ export const sortProductsAlphabetically =
         const sortedProducts =  filteredItems.sort((a, b) => (a.name > b.name ? -1 : 1));
       }
   
-    // console.log(sortedProducts, sort)
     console.log(sortedProducts);
-    // dispatch({
-    //   type: SORT_PRODUCTS_BY_PRICE,
-    //   payload: {
-    //     sort: sort,
-    //     items: sortedProducts,
-    //   },
-    // });
+    dispatch({
+      type: SORT_PRODUCTS_ALPHABETICALLY,
+      payload: {
+        sort: sort,
+        items: sortedProducts,
+      },
+    });
   };

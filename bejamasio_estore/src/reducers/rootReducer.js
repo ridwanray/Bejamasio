@@ -10,6 +10,10 @@ import {
   cartReducers
 } from "./cartReducers";
 
+import {
+  sortProductsReducer 
+} from "./sortReducers";
+
 
 const rootReducer = combineReducers({
   firebase: firebaseReducer,
@@ -17,6 +21,7 @@ const rootReducer = combineReducers({
 
   GetAllProducts:getAllProductsReducer,
   Cart:cartReducers,
+  sortedProducts:sortProductsReducer,
 
 });
 
