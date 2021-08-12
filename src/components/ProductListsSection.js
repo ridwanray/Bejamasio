@@ -12,6 +12,10 @@ function ProductListsSection() {
   const sortedProductItems = useSelector((state) => state.sortedProducts);
   const { sortedItems } = sortedProductItems;
 
+
+  const filteredProductItems = useSelector((state) => state.filteredProducts);
+  const { filteredItems } = filteredProductItems;
+
   useEffect(() => {
     products &&
       setAllProducts(products.filter((product) => product.featured === false));
@@ -21,7 +25,14 @@ function ProductListsSection() {
   useEffect(() => {
     setAllProducts(sortedItems);
     console.log("coming from sorted Effects---", sortedItems, "-----");
-  }, [sortedItems]);
+  }, [sortedItems,]);
+
+
+  useEffect(() => {
+    setAllProducts(filteredItems);
+    console.log("coming from sorted Effects---", filteredItems, "-----");
+  }, [filteredItems]);
+
 
   return (
     <section className="container mt-3">
@@ -50,15 +61,18 @@ function ProductListsSection() {
                 </div>
               ) : (
                 <>
+                  {/* //round(data.length / dataLimit) */}
+                  
                   {allproducts.length > 0 ? (
                     <Pagination
                       data={allproducts}
                       RenderComponent={Product}
-                      pageLimit={4}
+                      // pageLimit={4}
                       dataLimit={6}
+                      pageLimit={Math.ceil(allproducts.length / 6)}
                     />
                   ) : (
-                    <div>No products found.</div>
+                    <div className='d-flex justify-content-center'>No products found.</div>
                   )}
                 </>
               )}

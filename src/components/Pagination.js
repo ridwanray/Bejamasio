@@ -5,7 +5,6 @@ import arrowRight from "../images/Vector 2 (1).png";
 export default function Pagination({
   data,
   RenderComponent,
-  title,
   pageLimit,
   dataLimit,
 }) {
@@ -82,7 +81,7 @@ export default function Pagination({
           onClick={goToNextPage}
           style={{
             display: `${
-              currentPage === pages || currentPage > pages ? "none" : ""
+              currentPage === pages || currentPage !== pages ? "none" : ""
             }`,
           }}
           className={`next ${currentPage === pages ? "disabled" : ""}`}

@@ -39,7 +39,11 @@ function LargeScreenCategorySelector() {
   }, [dispatch, productFilterByPrice, productSortByCategories, filteredItems]);
 
   useEffect(() => {
-    productFilterByPrice !== "" && FireFilterActions();
+    productFilterByPrice !== "" && productSortByCategories.length > 0 && FireFilterActions();
+
+    productFilterByPrice !== "" &&
+      productSortByCategories.length == 0 &&
+      toast.error("Select a category to proceed");
 
     productFilterByPrice === "" &&
       productSortByCategories.length > 0 &&

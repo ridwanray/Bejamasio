@@ -8,6 +8,8 @@ import { cartReducers } from "./cartReducers";
 
 import { sortProductsReducer } from "./sortReducers";
 
+import { filterProductsReducer } from "./filterReducers";
+
 const rootReducer = combineReducers({
   firebase: firebaseReducer,
   firestore: firestoreReducer,
@@ -15,6 +17,7 @@ const rootReducer = combineReducers({
   GetAllProducts: getAllProductsReducer,
   Cart: cartReducers,
   sortedProducts: sortProductsReducer,
+  filteredProducts:filterProductsReducer,
 });
 
 export default rootReducer;
