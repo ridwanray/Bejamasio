@@ -1,10 +1,3 @@
-// export const nodeMan =()=>{
-//     console.log('coming from utils...node man')
-// }
-
-
-
-
 
 export let filter = {
     category: productSortByCategories,

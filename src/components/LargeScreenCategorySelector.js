@@ -125,41 +125,41 @@ function LargeScreenCategorySelector() {
             <div className=" mb-2 pr-3 form-inline">
               <input
                 type="radio"
-                className="checkbox-example"
-                name="age"
+                className="checkbox-example "
+               name='age'
                 value="Lower than $20"
               />
-              <label>&nbsp;Lower than $20</label>
+              <label className='lg-Screen'>&nbsp;Lower than $20</label>
             </div>
 
-            <div className=" mb-2 pr-3 form-inline">
+            <div className=" mb-2 pr-3 form-inline ">
               <input
                 type="radio"
                 className="mb-2"
-                name="age"
+                name='age'
                 value="$20 - $100"
               />
-              <label>&nbsp;$20 - $100</label>
+              <label className='lg-Screen'>&nbsp;$20 - $100</label>
             </div>
 
             <div className=" mb-2 pr-3 form-inline">
               <input
                 type="radio"
                 className="mb-2"
-                name="age"
+                name='age'
                 value="$100 - $200"
               />
-              <label>&nbsp;$100 - $200</label>
+              <label className='lg-Screen'>&nbsp;$100 - $200</label>
             </div>
 
             <div className=" mb-2 pr-3 form-inline">
               <input
                 type="radio"
                 className="mb-2"
-                name="age"
+                name='age'
                 value="More than $200"
               />
-              <label>&nbsp;More than $200</label>
+              <label className='lg-Screen'>&nbsp;More than $200</label>
             </div>
           </div>
         </div>

@@ -59,7 +59,7 @@ function FeaturedProduct() {
               </section>
               <section className="container mt-2">
                 <img
-                  className="container"
+                  className="container img-height"
                   src={featuredProduct[0].image.src}
                   alt={featuredProduct[0].image.src}
                   height="330"

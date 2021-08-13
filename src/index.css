@@ -1,3 +1,15 @@
+
+
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .lg-Screen{
+    font-size: 13px;
+  }
+  .img-height{
+    height: auto;
+  }
+}
 .topleft {
   position: absolute;
   top: 0px;

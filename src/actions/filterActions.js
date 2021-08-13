@@ -9,16 +9,16 @@ export const filterProductsByPriceAndCategory =
     console.log("CAtegory ---->", productSortByCategories);
     console.log("Filter Items ---->", filteredItems);
 
-    if (productFilterByPrice == "Lower than $20") {
+    if (productFilterByPrice === "Lower than $20") {
       var min = 0;
       var max = 20;
-    } else if (productFilterByPrice == "$20 - $100") {
+    } else if (productFilterByPrice === "$20 - $100") {
       var min = 20;
       var max = 100;
-    } else if (productFilterByPrice == "$100 - $200") {
+    } else if (productFilterByPrice === "$100 - $200") {
       var min = 100;
       var max = 200;
-    } else if (productFilterByPrice == "More than $200") {
+    } else if (productFilterByPrice === "More than $200") {
       var min = 201;
       var max = null;
     }
