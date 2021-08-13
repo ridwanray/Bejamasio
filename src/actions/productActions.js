@@ -22,7 +22,7 @@ export const fetchProducts = () => {
         const featuredProducts = ProductData.filter(
           (product) => product.featured === true
         );
-        console.log(featuredProducts[0].name);
+       
         dispatch({
           type: GetAllProducts_SUCCESS,
           payload: ProductData,

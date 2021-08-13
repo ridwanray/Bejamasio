@@ -44,6 +44,7 @@ function FeaturedProduct() {
             <>
               <section className="container d-flex justify-content-between">
                 <div className="">
+                   
                   <strong>{featuredProduct[0].name}</strong>
                 </div>
 
