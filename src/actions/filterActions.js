@@ -1,5 +1,7 @@
 import { FILTER_PRODUCTS_BY_CATEGORY_PRICE } from "../constants/filterConstants";
 import toast from "react-hot-toast";
+//TODO: Later modularize the filter functions into utils.js
+
 
 export const filterProductsByPriceAndCategory =
   (productFilterByPrice, productSortByCategories, filteredItems) =>
