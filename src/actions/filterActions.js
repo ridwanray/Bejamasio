@@ -1,7 +1,7 @@
 import { FILTER_PRODUCTS_BY_CATEGORY_PRICE } from "../constants/filterConstants";
 import toast from "react-hot-toast";
 //TODO: Later modularize the filter functions into utils.js
-
+import { GetAllProducts_SUCCESS } from "../constants/productConstants";
 
 export const filterProductsByPriceAndCategory =
   (productFilterByPrice, productSortByCategories, filteredItems) =>
@@ -24,7 +24,6 @@ export const filterProductsByPriceAndCategory =
       var min = 201;
       var max = null;
     }
-
 
     let filter = {
       category: productSortByCategories,
@@ -96,14 +95,26 @@ export const filterProductsByPriceAndCategory =
     console.log(result);
     console.log(result.length);
 
-    toast.success(
-        `Items found: ${result.length}`
-    );
+    toast.success(`Items found: ${result.length}`);
     dispatch({
       type: FILTER_PRODUCTS_BY_CATEGORY_PRICE,
       payload: {
         // sort: sort,
         items: result,
+      },
+    });
+  };
+
+export const clearFilterProductsByPriceAndCategory =
+  () => (dispatch, getState) => {
+    console.log("trying to clear filters");
+    console.log(getState().GetAllProducts.filteredItems);
+    const ProductData = getState().GetAllProducts.filteredItems;
+    dispatch({
+      type: FILTER_PRODUCTS_BY_CATEGORY_PRICE,
+      payload: {
+        // sort: sort,
+        items: ProductData,
       },
     });
   };

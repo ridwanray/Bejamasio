@@ -1,6 +1,6 @@
 import React, { useCallback, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { filterProductsByPriceAndCategory } from "../actions/filterActions";
+import { filterProductsByPriceAndCategory,clearFilterProductsByPriceAndCategory } from "../actions/filterActions";
 import toast from "react-hot-toast";
 
 function MobileFilterModal() {
@@ -38,15 +38,51 @@ function MobileFilterModal() {
     );
   }, [dispatch, productFilterByPrice, productSortByCategories, filteredItems]);
 
+
+
+
+  const modalSaveBtnOnClicked = ()=>{
+    console.log('on save clicked')
+    productFilterByPrice !== "" && productSortByCategories.length > 0 && FireFilterActions();
+    // 
+
+    productFilterByPrice !== "" &&
+      productSortByCategories.length == 0 &&
+      toast.error("Select a category to proceed");
+
+
+      productFilterByPrice === "" &&
+      productSortByCategories.length > 0 &&
+      toast.error("Please select price 💰 range to filter");
+  }
+
+
+
+  const modalClearBtnOnClicked = ()=>{
+    console.log('on clear clicked')
+    dispatch(clearFilterProductsByPriceAndCategory())
+    //on clear
+    //
+    //
+    
+
+    
+  }
+
+
   useEffect(() => {
-    productFilterByPrice !== "" && FireFilterActions();
+    productFilterByPrice !== "" && productSortByCategories.length > 0 && FireFilterActions();
+
+    productFilterByPrice !== "" &&
+      productSortByCategories.length == 0 &&
+      toast.error("Select a category to proceed");
 
     productFilterByPrice === "" &&
       productSortByCategories.length > 0 &&
       toast.error("Please select price 💰 range to filter");
 
-      console.log("consoling from Category selector effect----");
-  }, [productFilterByPrice, productSortByCategories, FireFilterActions]);
+    console.log("consoling from Category selector effect----");
+  }, [productFilterByPrice, productSortByCategories, FireFilterActions,modalSaveBtnOnClicked ]);
   return (
     <>
       <div
@@ -181,8 +217,9 @@ function MobileFilterModal() {
                   <div className="mt-2 mb-3 form-inline">
                     <div className="checkbox-example">
                       <input
-                        type="checkbox"
+                        type="radio"
                         value="Lower than $20"
+                        name='price'
                         
                       />
                       &nbsp;
@@ -193,7 +230,8 @@ function MobileFilterModal() {
                   <div className="mt-2 mb-3 form-inline">
                     <div className="checkbox-example">
                       <input
-                        type="checkbox"
+                      name='price'
+                        type="radio"
                         value="$20 - $100"
                         
                       />
@@ -203,7 +241,8 @@ function MobileFilterModal() {
                   <div className="mt-2 mb-3 form-inline">
                     <div className="checkbox-example">
                       <input
-                        type="checkbox"
+                      name='price'
+                        type="radio"
                         value="$100 - $200"
                         
                       />
@@ -214,8 +253,9 @@ function MobileFilterModal() {
                   <div className="mt-2 mb-3 form-inline">
                     <div className="checkbox-example">
                       <input
-                        type="checkbox"
+                        type="radio"
                         value="More than $200"
+                        name='price'
                         
                       />
                       &nbsp;
@@ -228,6 +268,9 @@ function MobileFilterModal() {
             <div className=" modal-footer border-3 form-inline  d-flex  justify-content-between ">
               <div className="row container form-inline">
                 <button
+                onClick={modalClearBtnOnClicked}
+                data-bs-dismiss="modal"
+                aria-label="Close"
                   type="button"
                   className="bg-white text-dark col btn pr-5 pl-5 btn-md btn-block btn-outline-dark "
                 >
@@ -235,6 +278,7 @@ function MobileFilterModal() {
                 </button>
                 &nbsp;&nbsp;
                 <button
+                onClick={modalSaveBtnOnClicked}
                   type="button"
                   className="col btn pr-5 pl-5 btn-md  btn-block  bg-dark text-white "
                 >
